@@ -27,7 +27,7 @@ export default function Home() {
         id="Home"
       >
         <h1 className="text-4xl md:text-6xl font-light text-center hero_fade_left">
-          Hello, I'm{" "}
+          Hello, I&apos;m{" "}
           <span className="text-blue-500 hover:text-blue-300 transition-no">
             <a href="https://www.linkedin.com/in/gabriel-romme-reyes-966497217/">
               Gabriel
@@ -36,7 +36,7 @@ export default function Home() {
           .
         </h1>
         <h2 className="text-4xl md:text-6xl font-light text-center hero_fade_right">
-          I'm a full stack developer.
+          I&apos;m a full stack developer.
         </h2>
         <a
           className="text-xl md:text-3xl border-4 px-4 py-2"
@@ -64,12 +64,12 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 mt-24">
               <section>
                 <p className="fade_left">
-                  I'm wholeheartedly committed to the idea of lifelong learning.
-                  Currently, I'm diving into the world of full stack development
-                  with a deep passion for JavaScript, React, and all things
-                  web-related. What really drives me is the perfect mix of
-                  creativity, problem-solving, and that constant thrill of
-                  discovering something new in technology.
+                  I&apos;m wholeheartedly committed to the idea of lifelong
+                  learning. Currently, I&apos;m diving into the world of full
+                  stack development with a deep passion for JavaScript, React,
+                  and all things web-related. What really drives me is the
+                  perfect mix of creativity, problem-solving, and that constant
+                  thrill of discovering something new in technology.
                 </p>
               </section>
               <section className="flex justify-center mt-24 md:mt-0">
