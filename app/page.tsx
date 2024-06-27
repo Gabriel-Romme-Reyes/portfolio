@@ -1,113 +1,260 @@
 import Image from "next/image";
 
+const links = [
+  {
+    name: "Home",
+    href: "#Home",
+  },
+  {
+    name: "About",
+    href: "#About",
+  },
+  {
+    name: "Projects",
+    href: "#Projects",
+  },
+  {
+    name: "Contact",
+    href: "#Contact",
+  },
+];
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="bg-gray-900 w-full h-full">
+      <section
+        className="min-h-screen  text-white flex flex-col items-center justify-center gap-12"
+        id="Home"
+      >
+        <h1 className="text-4xl md:text-6xl font-light text-center hero_fade_left">
+          Hello, I'm{" "}
+          <span className="text-blue-500 hover:text-blue-300 transition-no">
+            <a href="https://www.linkedin.com/in/gabriel-romme-reyes-966497217/">
+              Gabriel
+            </a>
+          </span>
+          .
+        </h1>
+        <h2 className="text-4xl md:text-6xl font-light text-center hero_fade_right">
+          I'm a full stack developer.
+        </h2>
+        <a
+          className="text-xl md:text-3xl border-4 px-4 py-2"
+          id="button"
+          href="#About"
+        >
+          View my Work
+        </a>
+      </section>
+      <section id="About" className="min-h-screen">
+        <nav className="bg-gray-700 z-10 flex justify-center md:justify-end sticky top-0 w-100">
+          <ul className="flex gap-4 md:gap-8  py-2 md:pe-52">
+            {links.map((link, id) => (
+              <li className="text-blue-200 text-l md:text-xl" key={id}>
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="flex flex-col items-center">
+          <section className="mt-12  max-w-7xl">
+            <h1 className="text-center text-xl font-bold md:text-6xl text-blue-300">
+              About me
+            </h1>
+            <div className="grid grid-cols-1 lg:grid-cols-2 mt-24">
+              <section>
+                <p className="fade_left">
+                  I'm wholeheartedly committed to the idea of lifelong learning.
+                  Currently, I'm diving into the world of full stack development
+                  with a deep passion for JavaScript, React, and all things
+                  web-related. What really drives me is the perfect mix of
+                  creativity, problem-solving, and that constant thrill of
+                  discovering something new in technology.
+                </p>
+              </section>
+              <section className="flex justify-center mt-24 md:mt-0">
+                <div className="grid grid-cols-3 gap-12">
+                  <div className="flex flex-col gap-8 justify-evenly items-center">
+                    <Image
+                      src={"/images/file-type-html.svg"}
+                      alt="html"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                    <Image
+                      src={"/images/file-type-css.svg"}
+                      alt="css"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                    <Image
+                      src={"/images/file-type-js-official.svg"}
+                      alt="js"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                  </div>
+                  <div className="flex flex-col gap-12 justify-evenly items-center">
+                    <Image
+                      src={"/images/file-type-reactjs.svg"}
+                      alt="react"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                    <Image
+                      src={"/images/next-js.svg"}
+                      alt="nextjs"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                    <Image
+                      src={"/images/tailwindcss-icon.svg"}
+                      alt="tailwind"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                    <Image
+                      src={"/images/typescript-icon.svg"}
+                      alt="typescript"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                  </div>
+                  <div className="flex flex-col gap-8 justify-evenly items-center">
+                    <Image
+                      src={"/images/mysql-original-wordmark.svg"}
+                      alt="mysql"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                    <Image
+                      src={"/images/sanity.svg"}
+                      alt="sanity"
+                      width={100}
+                      height={100}
+                      className="hover:scale-125"
+                    ></Image>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section
+            id="Projects"
+            className="min-h-screen mt-24 flex flex-col gap-12"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <h1 className="text-center text-xl font-bold md:text-6xl text-blue-300">
+              Projects
+            </h1>
+            <section className="grid grid-cols-2">
+              <div className="">
+                <Image
+                  src={"/images/Minify.png"}
+                  alt="Minify"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover object-center"
+                ></Image>
+              </div>
+              <div className="px-8 flex flex-col">
+                <h1 className="text-xl md:text-3xl font-bold">Minify Blog</h1>
+                <p className="text-sm md:text-xl mt-5">
+                  Dynamic Blog using Next.js fullstack,Tailwind,TypeScript and
+                  Sanity CMS
+                </p>
+                <span className="mt-5 ">
+                  <a
+                    href="https://blog-next-git-main-gabriel-romme-reyes-projects.vercel.app/"
+                    className="border-b-4 border-blue-500 py-2 hover:text-blue-500"
+                  >
+                    Live Demo
+                  </a>
+                </span>
+                <span className="mt-5 ">
+                  <a
+                    href="https://github.com/Gabriel-Romme-Reyes/blog-next"
+                    className="border-b-4 border-blue-500 py-2 hover:text-blue-500"
+                  >
+                    Learn More
+                  </a>
+                </span>
+              </div>
+            </section>
+
+            <section className="grid grid-cols-2">
+              <div className="px-8 flex flex-col">
+                <h1 className="text-xl md:text-3xl font-bold">DripCommerce</h1>
+                <p className="text-sm md:text-xl mt-5">
+                  Production ready e-commerce application built using Next.js
+                  fullstack,Tailwind,TypeScript, Sanity CMS, and Stripe API
+                </p>
+                <span className="mt-5 ">
+                  <a
+                    href="https://commerce-next-gabriel-romme-reyes-projects.vercel.app/"
+                    className="border-b-4 border-blue-500 py-2 hover:text-blue-500"
+                  >
+                    Live Demo
+                  </a>
+                </span>
+                <span className="mt-5 ">
+                  <a
+                    href="https://github.com/Gabriel-Romme-Reyes/commerce-next"
+                    className="border-b-4 border-blue-500 py-2 hover:text-blue-500"
+                  >
+                    Learn More
+                  </a>
+                </span>
+              </div>
+              <div className="">
+                <Image
+                  src={"/images/DripCommerce.png"}
+                  alt="DripCommerce"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover object-center"
+                ></Image>
+              </div>
+            </section>
+          </section>
+          <section id="Contact" className="mt-12">
+            <h1 className="text-center text-xl font-bold md:text-6xl text-blue-300">
+              Contact
+            </h1>
+          </section>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <footer className="bg-gray-600 min-h-24 flex justiy-center mt-12">
+          <div className="max-w-2xl mx-auto mt-5 flex justify-between gap-6">
+            <div className="rounded-full bg-white w-12 h-12 flex items-center justify-center">
+              <a href="https://github.com/Gabriel-Romme-Reyes" target="_blank">
+                <Image
+                  src={"/images/github.svg"}
+                  alt="alt"
+                  width={35}
+                  height={35}
+                ></Image>
+              </a>
+            </div>
+            <div className="rounded-full bg-white w-12 h-12 flex items-center justify-center">
+              <a href="mailto:reyes.gabrielromme@gmail.com" target="_blank">
+                <Image
+                  src={"/images/mail.svg"}
+                  alt="alt"
+                  width={35}
+                  height={35}
+                ></Image>
+              </a>
+            </div>
+          </div>
+        </footer>
+      </section>
     </main>
   );
 }

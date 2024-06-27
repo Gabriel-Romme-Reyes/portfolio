@@ -2,32 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
+  color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+#button{
+
+  transition: all 0.5s;
+  position: relative;
+  bottom: 0;
+  color: rgb(59 130 246);
+  border-color: rgb(59 130 246);
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+#button:hover{
+  bottom: 14px;
+  transform: scale(0.9);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.fade_left{
+  transform: translatex(50%);
+  animation-name: fade_left;
+  animation-duration: 2s;
+  width: 50%;
+  line-height: 2;
 }
+
+.hero_fade_left{
+  transform: translatex(00%);
+  animation-name: hero_fade_left;
+  animation-duration: 2s;
+}
+
+.hero_fade_right{
+  transform: translatex(00%);
+  animation-name: hero_fade_right;
+  animation-duration: 2s;
+}
+
+@keyframes hero_fade_left{
+  from {transform: translateX(-50%);}
+  to {transform: translateX(0%);}
+
+}
+
+@keyframes hero_fade_right{
+  from {transform: translateX(50%);}
+  to {transform: translateX(0%);}
+}
+
+@keyframes fade_left{
+  from {transform: translateX(0);}
+  to {transform: translateX(50%);}
+}
+
